@@ -1,0 +1,278 @@
+body {
+    height: 100%;
+    font: 14px Arial, sans-serif;
+    overflow: auto;
+  }
+  
+  .window {
+    width: 1500px;
+    height: 760px;
+    
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    
+    align-content: space-between;
+    justify-content: center;
+    background:#202125;
+  }
+  
+  .box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    
+   /* border: 1px solid red;*/
+  }
+  
+  .boxt{
+    width: 1480px;
+    height: 675px;
+    
+    justify-content: space-around;
+    align-content: space-around;
+  }
+  
+  .boxl{
+    width: 1040px;
+    height: 660px;
+  
+    justify-content: space-around;
+    align-content: space-around;
+    
+    border: 5px solid gray;
+    border-radius: 10px 10px 10px 10px;
+  }
+  
+  
+  .boxr{
+    width: 430px;
+    height: 525px;
+  
+    align-self: center;
+    
+    justify-content: space-around;
+    align-content: space-around;
+  }
+  
+  .boxr2{
+    width: 190px;
+    height: 160px;
+    /*height real160*/
+    border-radius: 10px 10px 10px 10px;
+    background:#3E3F43;
+    
+    justify-content: center;
+    align-content: center;
+    
+  }
+  
+  .boxr3{
+    width: 280px;
+    height: 160px;
+    /*height real160*/
+    border-radius: 10px 10px 10px 10px;
+    background:#3E3F43;
+    
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .boxd{
+    width: 1498px;
+    height: 80px;
+    justify-content: center;
+  }
+  
+  .row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+   /* border: 1px solid red;*/
+  }
+  
+  .row1{
+    
+    width: 170px;
+    height: 40px;
+    justify-content: space-between;
+    align-content: center;
+  }
+  
+  .row2{
+    width: 170px;
+    height: 70px;
+  }
+  
+  .row5{
+    width: 1030px;
+    height: 80px;
+    justify-content: flex-end;
+    align-content: center;
+  }
+  
+  .row6{
+    width: 1030px;
+    height: 490px;
+  }
+  
+  .row7{
+    width: 1030px;
+    height: 80px;
+    justify-content: flex-start;
+    align-content: center;
+  }
+  
+  .row8{
+    width: 550px;
+    height: 30px;
+    
+    align-self: center;
+    
+    font-size: 18px;
+    font:Arial;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+    
+  }
+  
+  .row9{
+    width: 350px;
+    height: 60px;
+    
+    align-self: center;
+  }
+  
+  .row10{
+    width: 550px;
+    height: 70px;
+    justify-content: flex-end;
+  }
+  
+  .circle{
+    border-radius: 50%;
+    background-color: #4396A8;
+  }
+  
+  .circle1{
+    width: 170px;
+    height: 170px;
+    
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+  
+  .circle2{
+    width: 60px;
+    height: 60px;
+    
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+  
+  .name{
+    font-size: 24px;
+    font:微軟正黑體;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+    
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .name3{
+    font-size: 68px;
+  }
+  
+  .nameid{
+    font-size: 15px;
+    font:微軟正黑體;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+    position:relative;
+    top: 10%;
+    left: 0%;
+  }
+  
+  .nameid2{
+    top: 5%;
+    left: 1%;
+    z-index: 1;
+  }
+  
+  .tool{
+    width: 140px;
+    height: 47px;
+    z-index: 2;
+    border-radius: 25px 25px 25px 25px;
+    position: relative;
+    top: -15%;
+    left: 9%;
+    
+    
+    opacity: 0.6;
+    display: none;
+  }
+  
+  .tool2{
+    width: 100px;
+    height: 33px;
+    border-radius: 18px 18px 18px 18px;
+    top: -30%;
+    left: -30%;
+  }
+  
+  .boxl:hover
+  .tool{
+    display: inline;
+  }
+  
+  .boxl:hover
+  .tool:hover{
+    opacity: 0.85;
+    display: inline;
+  }
+  
+  .boxr2:hover
+  .tool2{
+    display: inline;
+  }
+  
+  .boxr2:hover
+  .tool2:hover{
+    opacity: 0.85;
+    display: inline;
+  }
+  
+  .cancle{
+    visibility : visible;
+    width: 30px;
+    height: 30px;
+  }
+  
+  #person6{
+    justify-content: center;
+    align-content: center;
+    display: none;
+  }
+  
+  #cancle6{
+    visibility:hidden;
+  }
+  
