@@ -1,4 +1,4 @@
-import '../style.css';
+import '../styles.css';
 import Title from './Title';
 
 function Header() {

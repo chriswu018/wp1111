@@ -1,4 +1,4 @@
-import '../style.css';
+import '../styles.css';
 
 function Footer({inputData}) {
     if(inputData.length > 0){
