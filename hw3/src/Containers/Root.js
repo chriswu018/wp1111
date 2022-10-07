@@ -7,12 +7,14 @@ import Footer from '../Components/Footer';
 
 function Root () {
   const [input, setInput] = useState([])
+  const [done, setDone] = useState(0)
+  const [del, setDel] = useState(0)
 
   return(
     <div className='todo-app__root'>
       <Header/>
-      <Main inputState={[input, setInput]}/>
-      <Footer inputData={input}/>
+      <Main inputState={[input, setInput, done, setDone, del, setDel]}/>
+      <Footer inputData={[input, done, setDone, del, setDel]}/>
     </div>
   );
 }

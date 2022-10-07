@@ -6,10 +6,11 @@ function Input({inputState}) {
 
     function push (e){
         if(e.key === "Enter"){
-            setInputValue("")
+            //setInputValue("")
             let arr = [...inputState[0]]
             arr[arr.length] = inputValue
             inputState[1](arr)
+            setInputValue("")
         }
     }
 
