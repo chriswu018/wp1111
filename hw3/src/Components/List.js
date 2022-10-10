@@ -54,13 +54,13 @@ function List({inputState}) {
     }
 
     return(
-        <ul id="todo-list" class="todo-app__list">
+        <ul id="todo-list" className="todo-app__list">
             {
                 inputState[0].map((value, index) => 
                     <li className="todo-app__item">
                         <div className="todo-app__checkbox">
                             <input id={index}  type="checkbox" onClick={check} />
-                            <label for={index} />
+                            <label htmlFor={index} />
                         </div>
                         <h1 className="todo-app__item-detail">
                             {value}
