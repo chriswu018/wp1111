@@ -17,7 +17,10 @@ router.get('/guess', (req, res) => {
 // ⽤ req.query.number 拿到前端輸入的數字
     let guessNum = req.query.number
 // check if NOT a num or not in range [1,100]
+
     if(guessNum < 1 || guessNum > 100)
+        res.status(406).send({ msg: 'Not a legal number.' })
+    else if (isNaN(guessNum))
         res.status(406).send({ msg: 'Not a legal number.' })
     else if(guessNum < realNum)
         res.json({ msg: 'Bigger' })
