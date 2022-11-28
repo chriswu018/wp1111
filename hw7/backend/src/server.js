@@ -16,8 +16,8 @@ const db = mongoose.connection;
 
 db.once('open', async () => {
     console.log("MongoDB connected!");
-    await MessageModel.deleteMany({});
-    await ChatBoxModel.deleteMany({});
+    //await MessageModel.deleteMany({});
+    //await ChatBoxModel.deleteMany({});
     wss.on('connection', (ws) => {
         ws.box = '';
         //wsConnect.initData(ws);
