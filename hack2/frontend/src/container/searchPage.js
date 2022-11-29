@@ -69,10 +69,11 @@ const SearchPage = () => {
                             <div className='title'>
                                 <p className='name'>{item.name}</p>
                                 <p className='price'>{getPrice(item.price)}</p>
-                                <p className='distance'>{item.distance}</p>
+                                <p className='distance'>{item.distance/1000} km</p>
                             </div>
                             <p className='description'>
-                                
+                            {(item.tag).map((res, i) =>(
+                                i === (item.tag.length - 1) ? item: `, ${item}`))}
                             </p>
                         </div>
                     </div>
