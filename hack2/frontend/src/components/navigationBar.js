@@ -34,12 +34,12 @@ const NavBar = () => {
         })
         return clone;
     }
-    const navigateToSearch = async () => {
+    const navigateToSearch = () => {
         setFilterExpanded(false)
         // TODO Part I-1: navigation to search page
         // See README for hint
         // FIXME - Modify below
-        await navigate('/search', {
+        navigate('/search', {
             state: {
                 priceFilter: priceFilter,
                 mealFilter: mealFilter,
@@ -47,14 +47,6 @@ const NavBar = () => {
                 sortBy: sortMethod
             }
         });
-        /* {
-            state: {
-                priceFilter: priceFilter,
-                mealFilter: mealFilter,
-                typeFilter: typeFilter,
-                sortBy: sortMethod
-            }
-        }*/
 
     };
     return (

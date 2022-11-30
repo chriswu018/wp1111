@@ -15,6 +15,14 @@ exports.GetCommentsByRestaurantId = async (req, res) => {
     const id = req.query.restaurantId
     /****************************************/
     // TODO Part III-3-a: find all comments to a restaurant
+    Comment.find({restaurantId : id}).exec(async (err, data) => {
+        if(!err){
+            //console.log(data);
+            await res.status(200).send({ message: 'success', contents: data });
+        }else{
+            await res.status(403).send({ message: 'error', contents: [] })
+        }
+    })
 
     // NOTE USE THE FOLLOWING FORMAT. Send type should be 
     // if success:
@@ -31,7 +39,12 @@ exports.GetCommentsByRestaurantId = async (req, res) => {
 
 exports.CreateComment = async (req, res) => {
     /*******    NOTE: DO NOT MODIFY   *******/
-    const body = req.body
+    const { restaurantId, rating, name, content} = req.body
     /****************************************/
     // TODO Part III-3-b: create a new comment to a restaurant
+    try {
+        const newComment = new Comment({ restaurantId, rating, name, content });
+        console.log("Created Comment", newComment);
+        return newComment.save();
+    } catch (e) { throw new Error("ScoreCard creation error: " + e); }
 }

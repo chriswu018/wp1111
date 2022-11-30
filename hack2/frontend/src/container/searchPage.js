@@ -18,15 +18,15 @@ const instance = axios.create({
 const SearchPage = () => {
     const { state } = useLocation();
     const [restaurants, setRestaurant] = useState([])
-    const [ct, setCt] = useState(false);
     const getRestaurant = async () => {
         // TODO Part I-3-b: get information of restaurants from DB
-    
         const restaurant = await instance.get('/getSearch',{
-            params: { priceFilter: state.priceFilter,
+            params: { 
+                priceFilter: state.priceFilter,
                 mealFilter: state.mealFilter,
                 typeFilter:state.typeFilter,
-                sortBy: state.sortBy,}
+                sortBy: state.sortBy,
+            }
         });
         
         if(restaurant.data.message === 'success'){
@@ -41,12 +41,9 @@ const SearchPage = () => {
 
 
     const navigate = useNavigate();
-    const ToRestaurant = async (id) => {
+    const ToRestaurant = (id) => {
         // TODO Part III-1: navigate the user to restaurant page with the corresponding id
-        
-            await navigate('/restaurant/' + id)
-            console.log(id);
-        
+        navigate('/restaurant/' + id);
     }
     const getPrice = (price) => {
         let priceText = ""
@@ -54,9 +51,14 @@ const SearchPage = () => {
             priceText += "$"
         return (priceText)
     }
-
-
+    const getDescription = (arr) => {
+        let str = '';
+        str += arr[0];
+        for(let i=1;i<arr.length;i++) str += ', ' + arr[i];
+        return str
+    }
     return (
+
         <div className='searchPageContainer'>
             {
                 restaurants.map((item) => (
@@ -72,12 +74,10 @@ const SearchPage = () => {
                                 <p className='distance'>{item.distance/1000} km</p>
                             </div>
                             <p className='description'>
-                            {(item.tag).map((res, i) =>(
-                                i === (item.tag.length - 1) ? item: `, ${item}`))}
+                                {getDescription(item.tag)}
                             </p>
                         </div>
                     </div>
-
                 ))
             }
         </div>

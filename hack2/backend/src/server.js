@@ -13,8 +13,6 @@ import cors from 'cors'
 import routes from './routes'
 import mongoose from 'mongoose'
 import { dataInit } from './upload'
-
-
 require('dotenv').config()
 const app = express()
 
@@ -36,6 +34,7 @@ const dboptions = {
 }
 
 // TODO Part I-3: check .env exists
+
 if (!process.env.MONGO_URL) {
     console.error("Missing MONGO_URL!!!");
     process.exit(1);
@@ -51,6 +50,7 @@ mongoose.connect(process.env.MONGO_URL, {
         dataInit()
     }
 })
+
 
 // TODO Part I-3: check DB connection
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));

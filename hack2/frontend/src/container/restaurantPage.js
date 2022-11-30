@@ -24,16 +24,32 @@ const RestaurantPage = () => {
     const [loading, setLoading] = useState(true)
     const getInfo = async () => {
         // TODO Part III-2: get a restaurant's info
-        /*let inf = {
-            name: ,
-            distance:,
-            price:,
-            tag:,
-            time:,
-        }*/
+        const restaurant = await instance.get('/getInfo',{
+            params: { 
+                id : id
+            }
+        });
+        
+        if(restaurant.data.message === 'success'){
+            let inf = restaurant.data.contents
+            setInfo(inf[0]);
+        }
+
+        //getComments();
     }
+
     const getComments = async () => {
         // TODO Part III-3: get a restaurant's comments 
+        const cmt = await instance.get('getCommentsByRestaurantId/', {
+            // TODO Part III-3-b: store the comment to the DB
+            params: { 
+                restaurantId : id
+            }
+        });
+        //console.log(cmt.data.contents);
+        if(cmt.data.contents !== comments) setComments(cmt.data.contents);
+        console.log("update the comment");
+        setLoading(false);
     }
     useEffect(() => {
         if (Object.keys(info).length === 0) {
@@ -43,10 +59,21 @@ const RestaurantPage = () => {
     
     useEffect(() => {
         // TODO Part III-3-c: update the comment display immediately after submission
+        getComments();
+        setLoading(true);
+    }, [loading])
+
+    useEffect(() => {
+        // TODO Part III-3-c: update the comment display immediately after submission
+        getComments();
     }, [comments])
 
     /* TODO Part III-2-b: calculate the average rating of the restaurant */
     let rating = 0;
+    for(let i=0;i<comments.length;i++){
+        rating += comments[i].rating;
+    }
+    rating /= comments.length;
     
     return (
         <div className='restaurantPageContainer'>
@@ -54,5 +81,6 @@ const RestaurantPage = () => {
             <Comment restaurantId={id} comments={comments} setComments={setComments} setLoad={setLoading} />
         </div>
     )
+    //{Object.keys(info).length === 0 ? <></> : <Information info={info} rating={rating} />}
 }
 export default RestaurantPage
