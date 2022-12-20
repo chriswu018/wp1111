@@ -41,7 +41,8 @@ const Mutation = {
     console.log(id);
     const item = await itemModel.deleteOne({id: id});
     console.log("fde")
-    pubSub.publish("ITEM_DELETE", {
+
+    pubSub.publish("ITEM_DELETED", {
       itemDeleted: id,
     });
 
