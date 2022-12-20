@@ -6,8 +6,10 @@ query GET_ITEMS_QUERY {
   items{
     id
     name
-    description
+    amount
+    category
     date
+    description
     # TODO 2.1 Write query GraphQL
 
     # TODO 2.1 End
