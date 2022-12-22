@@ -1,0 +1,13 @@
+{
+  "name": "hw8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "frontend": "cd frontend && yarn start",
+    "backend": "cd backend && yarn server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
